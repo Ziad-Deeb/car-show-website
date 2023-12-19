@@ -1,0 +1,681 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    font-size: 1.6rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+
+/* heaer  */
+header {
+    font-family: 'Aldrich', sans-serif;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.9;
+    width: 100%;
+    height: 6rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo {
+    color: black;
+    font-size: 2.5rem;
+}
+
+.home-title {
+    color: black;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 3.5px solid white;
+}
+
+.logo-page {
+    display: flex;
+    gap: 1rem;
+}
+
+.menu-icons i {
+    font-size: 2.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+.close i {
+    color: white;
+}
+
+.nav-list {
+    width: 25rem;
+    height: 100vh;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    transition: all 650ms ease-in-out;
+}
+
+.nav-list.avtive {
+    right: 26;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+
+.nav-item {
+    margin: 1.5rem 0;
+}
+
+.nav-link {
+    font-size: 1.6rem;
+    color: #a0a0a0;
+}
+
+@media screen and (min-width:700px) {
+    header {
+        height: 6rem;
+    }
+
+    .nav-brand {
+        width: 3.5rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .nav-list {
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        position: initial;
+        right: 0;
+        flex-direction: row;
+        transition: initial;
+    }
+
+    .menu-icons {
+        display: none;
+    }
+
+    .nav-item {
+        margin: 0 2.5rem;
+    }
+
+    .nav-link {
+        position: relative;
+        text-decoration: none;
+        color: black;
+        letter-spacing: 0.4px;
+        font-weight: bold;
+    }
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        background-color: black;
+        height: 2px;
+        width: 0;
+        left: 0;
+        bottom: -1px;
+        transition: 0.3s;
+    }
+
+    .nav-link:hover:after {
+        width: 100%;
+    }
+}
+
+/* Home-page */
+.home-page {
+    width: 100%;
+    height: 100vh;
+    background: url(../img/home-page.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.home-page::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10.7rem;
+    background: url(../img/wave-small.png) no-repeat;
+    background-size: cover;
+}
+
+.main-message {
+    width: 100%;
+    max-width: 50rem;
+    transform: translateY(20%);
+    color: white;
+}
+
+.main-message h3 {
+    font-size: 1.6rem;
+}
+
+.main-message h1 {
+    font-family: 'Aldrich', sans-serif;
+    font-size: 4rem;
+}
+
+.read {
+    text-align: center;
+    font-weight: 900px;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 14px;
+    background-color: white;
+    border-radius: 2rem;
+    color: black;
+    font-size: 15px;
+    transition-duration: 1s;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.read:hover {
+    padding: 18px;
+    background-color: black;
+    color: white;
+}
+
+.why {
+    margin: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    column-gap: 2.5rem;
+}
+
+.activities-grid h1 {
+    text-align: center;
+    font-family: 'aldrich', sans-serif;
+}
+
+.activities-grid-item {
+    color: black;
+    padding: 5rem;
+    cursor: pointer;
+}
+
+
+.cards {
+    /* height: 600px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    column-gap: 2.5rem;
+    background-color: black;
+}
+
+.bmw-card,
+.mercedes-card,
+.audi-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+}
+
+
+.bmw-card {
+    background: url(../img/bmw\ logo\ 1.png) center no-repeat;
+    background-size: cover;
+    animation-name: bmw-animation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.mercedes-card {
+    background: url(../img/mercedes\ logo1.jpg) center no-repeat;
+    background-size: cover;
+    animation-name: mercedes-animation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.audi-card {
+    background: url(../img/audi\ logo1.jpg) center no-repeat;
+    background-size: cover;
+    animation-name: audi-animation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes bmw-animation {
+    100% {
+        background-image: url(../img/bmw\ logo2.jpg);
+    }
+}
+
+@keyframes mercedes-animation {
+    100% {
+        background: url(../img/mercedes\ logo2.jpg) center no-repeat;
+        background-size: cover;
+    }
+}
+
+@keyframes audi-animation {
+    100% {
+        background: url(../img/audi\ logo2.jpg) center no-repeat;
+        background-size: cover;
+    }
+}
+
+.bmw-card:hover {
+    padding: 10px;
+    box-shadow: 6px 6px 20px 0px white;
+    transition: all 0.5s ease-in-out;
+}
+
+.mercedes-card:hover {
+    padding: 10px;
+    box-shadow: 6px 6px 20px 0px white;
+    transition: all 0.5s ease-in-out;
+}
+
+.audi-card:hover {
+    padding: 10px;
+    box-shadow: 6px 6px 20px 0px white;
+    transition: all 0.5s ease-in-out;
+}
+
+.home-page2 {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(../img/mercedes3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 60px;
+}
+
+/* Products */
+
+.product {
+    text-align: center;
+}
+
+.product .pro-container,
+.pro-container2,
+.pro-container3,
+.testimonial-box-container {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.product .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #8e8e8e;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px black;
+    transition: 0.5s ease-in-out;
+
+}
+
+.product .pro:hover {
+    box-shadow: 0px 0px 30px rgb(60, 47, 121);
+}
+
+.product .pro img {
+    border-radius: 20px;
+}
+
+.product .pro .des span {
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.product .pro .des p {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 4px;
+    color: #717171;
+    font-size: 16px;
+}
+
+.product .pro a .shop {
+    font-size: 30px;
+}
+
+/* testimonial */
+.testimonial-page {
+    position: relative;
+    width: 100%;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.wrapper .container2 {
+    position: relative;
+    width: 25%;
+    background: linear-gradient(white, #1e254d, #121012);
+    padding: 30px 20px;
+    margin: 40px 10px;
+    border-radius: 30px;
+}
+
+.wrapper .container2 .profile {
+    position: absolute;
+    left: 0;
+    top: -10%;
+    width: 100%;
+    display: block;
+}
+
+.wrapper .container2 .profile .imgBox {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border: 8px solid white;
+    border-radius: 50%;
+}
+
+.wrapper .container2 .profile .imgBox img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.wrapper .container2 .profile h2 {
+    padding: 5px 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.wrapper .container2 p {
+    margin-top: 70px;
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.wrapper .container2 .left {
+    font-size: 30px;
+    display: block;
+    text-align: left;
+}
+
+.wrapper .container2 .right {
+    font-size: 30px;
+    display: block;
+    text-align: right;
+}
+
+.wrapper .container2 .social i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: black;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.heading span {
+    color: white;
+}
+
+
+.contact .row {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.contact .row form {
+    flex: 1 1 40rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border: .1rem solid rgba(0, 0, 0, .1);
+    background: #fff;
+    border-radius: .5rem;
+}
+
+.contact .row .image {
+    flex: 1 1 40rem;
+}
+
+.contact .row .image img {
+    width: 100%;
+}
+
+.contact .row form .box {
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    margin: .7rem 0;
+    width: 100%;
+}
+
+.contact .row form .box:focus {
+    border-color: black;
+}
+
+.contact .row form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.submit {
+    font-family: 'Aldrich', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: white;
+    color: black;
+}
+
+.map-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background-image: url(../img/map.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.map {
+    width: 500px;
+    padding: 25px;
+    background-color: #fafafa;
+}
+
+.footer {
+    padding-top: 5rem;
+    padding-bottom: 0;
+    background-color: #262626;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+
+.footer .box-container .box h3 {
+    font-family: 'Lora', serif;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.box h3::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 11ch;
+    left: 0;
+    bottom: 0;
+    background-color: #8e8e8e;
+}
+
+.footer .box-container .box {
+    flex: 1 1 25rem;
+    margin-left: 40px;
+}
+
+.footer .box-container .box h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1px;
+}
+
+.footer .box-container .box a {
+    display: block;
+    color: #8e8e8e;
+    font-size: 1.5rem;
+    padding: 5px 0;
+}
+
+.footer .box-container .box a:hover {
+    color: white;
+    transition-duration: 0.4s;
+    transform: translate(14px);
+}
+
+.box .icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 1rem;
+    color: white;
+}
+
+.circle {
+    font-size: 20px;
+}
+
+.circle {
+    width: 36px;
+    height: 37px;
+    color: white;
+    background-color: #666363;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle:hover {
+    color: black;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+.footer .credit {
+    padding: 60px 0px 60px 40px;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+}
+
+.product .pro .des p:hover {
+    color: black;
+}
